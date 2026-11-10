@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Work – Caten ZA Pictures</title>
+<meta name="description" content="Fashion and food &amp; beverage video work by Caten ZA Pictures.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      fontFamily: { sans: ['Montserrat', 'system-ui', 'sans-serif'] },
+      colors: { sun: '#d35614', ember: '#b0400e', deep: '#8f3009', cream: '#fff3e6', ink: '#1f0f09',
+                clay: '#6b4a3a', sand: '#ecd2bd', plum: '#6a3d8f' }
+    } }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #fff3e6; color: #1f0f09; font-family: Montserrat, system-ui, sans-serif; }
+  :focus-visible { outline: 2px solid #1f0f09; box-shadow: 0 0 0 5px #fff; }
+
+  /* Logo lockup: big "Caten", small "ZA" with "Pictures" beneath */
+  .mark { display: inline-flex; align-items: flex-end; gap: .2em; line-height: 1; }
+  .mark .name { font-weight: 500; letter-spacing: -.045em; font-size: 1em; }
+  .mark .sub { display: flex; flex-direction: column; font-size: .4em; line-height: 1.05; padding-bottom: .12em; }
+  .mark .za { font-weight: 500; letter-spacing: .02em; font-size: 1.25em; }
+  .mark .pic { font-weight: 300; font-size: .82em; letter-spacing: -.01em; opacity: .85; }
+
+  /* Hero: plain black so the logo image keeps its original look. */
+  .hero-bg { background: #000; }
+  .hero-img { display: block; width: min(100%, 1080px); margin: 0 auto; height: auto; }
+  .hero-copy { margin-top: calc(-1 * min(24vw, 250px)); }
+  .hero-in { animation: rise 1s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-in.d2 { animation-delay: .2s; } .hero-in.d3 { animation-delay: .4s; }
+  @keyframes rise { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform:none; } }
+
+  .sunset { background:
+      radial-gradient(ellipse 60% 70% at 85% 0%, rgba(255,190,100,.55) 0%, transparent 70%),
+      linear-gradient(175deg, #e8701f 0%, #cf5313 40%, #a83a0b 75%, #8f3009 100%); }
+  .feature { background: rgba(88,24,4,.38); }
+  .tile { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .card:hover .tile, .card:focus-within .tile { transform: scale(1.05); }
+  .card .play { opacity: 0; transform: scale(.85); transition: all .3s; }
+  .card:hover .play, .card:focus-within .play { opacity: 1; transform: scale(1); }
+
+  .filter-btn { padding:.5rem 1.15rem; border:1px solid #d9b79c; border-radius:999px; font-size:.8125rem; color:#6b4a3a; transition:all .2s; }
+  .filter-btn:hover { color:#1f0f09; border-color:#1f0f09; }
+  .filter-btn[aria-pressed="true"] { background:#1f0f09; color:#fff3e6; border-color:#1f0f09; }
+  .field { width:100%; background:transparent; border:0; border-bottom:1px solid #c9a98f; padding:.65rem 0; color:#1f0f09; border-radius:0; transition:border-color .2s; }
+  .field:focus { outline:none; box-shadow:none; border-color:#d35614; border-bottom-width:2px; }
+  .field[aria-invalid="true"] { border-color:#b3261e; }
+  .err { min-height:1.25rem; margin-top:.4rem; font-size:.8125rem; color:#b3261e; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<header class="fixed top-0 inset-x-0 z-40 bg-ember/90 backdrop-blur text-white">
+  <nav class="max-w-7xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between" aria-label="Main">
+    <a href="index.html" class="mark text-3xl" aria-label="Caten ZA Pictures, home">
+      <span class="name">Caten</span><span class="sub"><span class="za">ZA</span><span class="pic">Pictures</span></span>
+    </a>
+    <div class="flex items-center gap-6 md:gap-9 text-sm">
+      <a href="index.html" class="hidden sm:inline opacity-90 hover:opacity-100 transition-opacity">Home</a>
+      <a href="index.html#proposal" class="px-5 py-2 border border-white/70 rounded-full hover:bg-white hover:text-ember transition-colors">Request a proposal</a>
+    </div>
+  </nav>
+</header>
+
+<main class="pt-32 md:pt-40 pb-20 md:pb-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <a href="index.html#work" class="inline-flex items-center gap-2 text-sm text-clay hover:text-ink transition-colors">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      Back to home
+    </a>
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mt-8 mb-12">
+      <div>
+        <div class="w-9 h-[3px] bg-sun mb-6"></div>
+        <h1 class="font-medium tracking-tight text-4xl md:text-6xl leading-[1.05]">All work</h1>
+        <p class="mt-4 text-clay max-w-lg">Fashion films, food promos and everything in between.</p>
+      </div>
+      <div class="flex flex-wrap gap-2" role="group" aria-label="Filter projects" id="filters">
+        <button data-filter="all" aria-pressed="true" class="filter-btn">All</button>
+        <button data-filter="fashion" aria-pressed="false" class="filter-btn">Fashion</button>
+        <button data-filter="food" aria-pressed="false" class="filter-btn">Food &amp; Beverage</button>
+      </div>
+    </div>
+    <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12"></div>
+
+    <div class="mt-20 border-t border-sand pt-12 text-center">
+      <h2 class="font-medium tracking-tight text-2xl md:text-3xl">Have a project in mind?</h2>
+      <a href="index.html#proposal" class="mt-6 inline-block bg-ink text-cream font-medium px-8 py-4 rounded-full hover:bg-sun transition-colors">Request a Proposal</a>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-deep text-white py-12">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+    <div class="flex items-center gap-5">
+      <span class="mark text-2xl"><span class="name">Caten</span><span class="sub"><span class="za">ZA</span><span class="pic">Pictures</span></span></span>
+      <p class="text-white/85">© <span id="year">2026</span> Caten ZA Pictures. All rights reserved.</p>
+    </div>
+    <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3">
+      <li><a href="terms.html" class="hover:underline underline-offset-8">Terms &amp; Conditions</a></li>
+      <li><a href="https://instagram.com/catenzapicturez" target="_blank" rel="noopener" class="hover:underline underline-offset-8">Instagram</a></li>
+      <li><a href="https://www.tiktok.com/@catenzapicturez" target="_blank" rel="noopener" class="hover:underline underline-offset-8">TikTok</a></li>
+      <li><a href="https://youtube.com/@catenzapicturez" target="_blank" rel="noopener" class="hover:underline underline-offset-8">YouTube</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  // Keep this list in step with the one in index.html. The home page shows the first 3 of each filter.
+  const projects = [
+    { title: "Resort Capsule Lookbook", client: "Maison Aurelle", cat: "fashion", tag: "Lookbook", ratio: "aspect-[4/5]", x: 25 },
+    { title: "Slow Pour: Winter Menu", client: "Ember & Oak Café", cat: "food", tag: "Food promo", ratio: "aspect-video", x: 70 },
+    { title: "Inga - (Official Audio)", client: "JaySesh", cat: "fashion", tag: "Campaign", ratio: "aspect-video", video: "zixIHPy_YNg", x: 60 },
+    { title: "Cold Brew Launch Reel", client: "Tidewater Coffee", cat: "food", tag: "Social reel", ratio: "aspect-video", x: 30 },
+    { title: "Evening Wear Film", client: "Velour Studio", cat: "fashion", tag: "Fashion film", ratio: "aspect-video", x: 50 },
+    { title: "Chef’s Table Series", client: "Salt & Ash Kitchen", cat: "food", tag: "Brand story", ratio: "aspect-[4/5]", x: 75 }
+  ];
+  const grid = document.getElementById('grid');
+  const label = { fashion: 'Fashion', food: 'Food & Beverage' };
+  const bg = p => `radial-gradient(ellipse at ${p.x}% 15%, #4a4a4d 0, transparent 60%), linear-gradient(165deg, #1e1e20, #000)`;
+
+  function render(filter) {
+    grid.innerHTML = projects
+      .filter(p => filter === 'all' || p.cat === filter)
+      .map(p => `
+        <article class="card">
+          ${p.video ? `
+          <div class="relative overflow-hidden ${p.ratio} bg-ink rounded-sm">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/${p.video}?si=Ddf3mz49IWcGEd89" title="${p.title} by ${p.client}" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>` : `
+          <a href="index.html#proposal" class="block relative overflow-hidden ${p.ratio} bg-ink rounded-sm" aria-label="Play ${p.title} by ${p.client}">
+            <div class="tile absolute inset-0" style="background: ${bg(p)}"></div>
+            <span class="absolute top-4 left-4 text-xs font-medium px-3 py-1 rounded-full bg-cream text-ink">${p.tag}</span>
+            <span class="play absolute inset-0 m-auto w-16 h-16 rounded-full bg-white text-deep flex items-center justify-center shadow-lg">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </a>`}
+          <div class="mt-4 flex items-baseline justify-between gap-4">
+            <h3 class="text-lg font-medium leading-tight tracking-tight">${p.title}</h3>
+            <span class="text-xs text-clay shrink-0">${label[p.cat]}</span>
+          </div>
+          <p class="text-sm text-clay mt-1">${p.video ? p.client + " · " + p.tag : p.client}</p>
+        </article>`).join('');
+  }
+
+  function setFilter(f, updateHash) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('aria-pressed', b.dataset.filter === f));
+    render(f);
+    if (updateHash) history.replaceState(null, '', f === 'all' ? location.pathname : '#' + f);
+  }
+
+  document.getElementById('filters').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (btn) setFilter(btn.dataset.filter, true);
+  });
+
+  const start = location.hash.replace('#', '');
+  setFilter(['fashion', 'food'].includes(start) ? start : 'all', false);
+</script>
+</body>
+</html>
