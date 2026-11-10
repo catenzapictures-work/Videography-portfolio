@@ -142,7 +142,7 @@
 <section id="proposal" class="py-20 md:py-28 scroll-mt-16">
   <div class="max-w-3xl mx-auto px-5 md:px-8">
     <h2 class="font-medium tracking-tight text-4xl md:text-5xl">Request a proposal</h2>
-    <p class="mt-4 text-clay max-w-lg">Tell me about your brand and what you need. You’ll hear back within two working days.</p>
+    <p class="mt-4 text-clay max-w-lg">Tell us about your brand and what you need. Our team will get back to you within 2–4 hours.</p>
 
     <form id="proposal-form" class="mt-12 space-y-8" novalidate>
       <div class="grid md:grid-cols-2 gap-8">
@@ -170,13 +170,13 @@
           <p class="err" data-for="type"></p>
         </div>
         <div>
-          <label for="budget" class="block text-sm font-medium mb-2">Budget range</label>
+          <label for="budget" class="block text-sm font-medium mb-2">Package</label>
           <select id="budget" name="budget" class="field" required>
             <option value="">Choose one</option>
-            <option>Under R15,000</option>
-            <option>R15,000 – R40,000</option>
-            <option>R40,000 – R100,000</option>
-            <option>R100,000+</option>
+            <option>Social Starter (R2,700 – R4,500)</option>
+            <option>Package 2 (R5,000 – R6,800)</option>
+            <option>Full Package (R8,000 – R13,000)</option>
+            <option>Monthly retainer (open to negotiating pricing)</option>
             <option>Not sure yet</option>
           </select>
           <p class="err" data-for="budget"></p>
@@ -193,7 +193,7 @@
 
     <div id="success" class="hidden mt-12 border border-sand bg-white p-10" role="status" tabindex="-1">
       <h3 class="text-3xl font-medium tracking-tight text-sun">Request received.</h3>
-      <p class="mt-4 text-clay leading-relaxed">Thanks, <span id="success-name" class="text-ink font-medium"></span>. I’ll review your project and reply to <span id="success-email" class="text-ink font-medium"></span> within two working days.</p>
+      <p class="mt-4 text-clay leading-relaxed">Thanks, <span id="success-name" class="text-ink font-medium"></span>. Our team will review your project and reply to <span id="success-email" class="text-ink font-medium"></span> within 2–4 hours.</p>
       <button id="reset-btn" class="mt-8 underline underline-offset-8 decoration-sand hover:decoration-ink">Send another request</button>
     </div>
   </div>
@@ -263,8 +263,8 @@
     brand: v => v.trim().length >= 2 || 'Enter your brand or business name.',
     email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || 'Enter a valid email address, like name@brand.com.',
     type: v => v !== '' || 'Choose a project type.',
-    budget: v => v !== '' || 'Choose a budget range.',
-    details: v => v.trim().length >= 20 || 'Add a few details (at least 20 characters) so I can scope your project.'
+    budget: v => v !== '' || 'Choose a package.',
+    details: v => v.trim().length >= 20 || 'Add a few details (at least 20 characters) so we can scope your project.'
   };
 
   function check(name) {
