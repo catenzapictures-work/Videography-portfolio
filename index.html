@@ -174,7 +174,7 @@
           <select id="budget" name="budget" class="field" required>
             <option value="">Choose one</option>
             <option>Social Starter (R2,700 – R4,500)</option>
-            <option>Brand Growth (R5,000 – R6,800)</option>
+            <option>Package 2 (R5,000 – R6,800)</option>
             <option>Full Package (R8,000 – R13,000)</option>
             <option>Monthly retainer (open to negotiating pricing)</option>
             <option>Not sure yet</option>
@@ -206,12 +206,12 @@
       <span class="mark text-2xl"><span class="name">Caten</span><span class="sub"><span class="za">ZA</span><span class="pic">Pictures</span></span></span>
       <p class="text-white/85">© <span id="year">2026</span> Caten ZA Pictures. All rights reserved.</p>
     </div>
-    <ul class="flex gap-8">
-    <li><a href="https://instagram.com/catenzapicturez" target="_blank" rel="noopener" class="hover:underline underline-offset-8">Instagram</a></li>
-    <li><a href="https://www.tiktok.com/@catenzapicturez" target="_blank" rel="noopener" class="hover:underline underline-offset-8">TikTok</a></li>
-    <li><a href="https://youtube.com/@catenzapicturez" target="_blank" rel="noopener" class="hover:underline underline-offset-8">YouTube</a></li>
-    <li><a href="terms.html" target="_blank" rel="noopener" class="hover:underline underline-offset-8">Terms & Conditions</a></li>
-</ul>
+    <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3">
+      <li><a href="terms.html" class="hover:underline underline-offset-8">Terms &amp; Conditions</a></li>
+      <li><a href="https://instagram.com/catenzapicturez" target="_blank" rel="noopener" class="hover:underline underline-offset-8">Instagram</a></li>
+      <li><a href="https://www.tiktok.com/@catenzapicturez" target="_blank" rel="noopener" class="hover:underline underline-offset-8">TikTok</a></li>
+      <li><a href="https://youtube.com/@catenzapicturez" target="_blank" rel="noopener" class="hover:underline underline-offset-8">YouTube</a></li>
+    </ul>
   </div>
 </footer>
 
@@ -220,7 +220,7 @@
   const projects = [
     { title: "Resort Capsule Lookbook", client: "Maison Aurelle", cat: "fashion", tag: "Lookbook", ratio: "aspect-[4/5]", x: 25 },
     { title: "Slow Pour: Winter Menu", client: "Ember & Oak Café", cat: "food", tag: "Food promo", ratio: "aspect-video", x: 70 },
-    { title: "Street Edit, Season Drop", client: "Nkosi Atelier", cat: "fashion", tag: "Campaign", ratio: "aspect-[4/5]", x: 60 },
+    { title: "Inga - (Official Audio)", client: "JaySesh", cat: "fashion", tag: "Campaign", ratio: "aspect-video", video: "zixIHPy_YNg", x: 60 },
     { title: "Cold Brew Launch Reel", client: "Tidewater Coffee", cat: "food", tag: "Social reel", ratio: "aspect-video", x: 30 },
     { title: "Evening Wear Film", client: "Velour Studio", cat: "fashion", tag: "Fashion film", ratio: "aspect-video", x: 50 },
     { title: "Chef’s Table Series", client: "Salt & Ash Kitchen", cat: "food", tag: "Brand story", ratio: "aspect-[4/5]", x: 75 }
@@ -234,18 +234,22 @@
       .filter(p => filter === 'all' || p.cat === filter)
       .map(p => `
         <article class="card">
+          ${p.video ? `
+          <div class="relative overflow-hidden ${p.ratio} bg-ink rounded-sm">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/${p.video}?si=Ddf3mz49IWcGEd89" title="${p.title} by ${p.client}" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>` : `
           <a href="#proposal" class="block relative overflow-hidden ${p.ratio} bg-ink rounded-sm" aria-label="Play ${p.title} by ${p.client}">
             <div class="tile absolute inset-0" style="background: ${bg(p)}"></div>
             <span class="absolute top-4 left-4 text-xs font-medium px-3 py-1 rounded-full bg-cream text-ink">${p.tag}</span>
             <span class="play absolute inset-0 m-auto w-16 h-16 rounded-full bg-white text-deep flex items-center justify-center shadow-lg">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
             </span>
-          </a>
+          </a>`}
           <div class="mt-4 flex items-baseline justify-between gap-4">
             <h3 class="text-lg font-medium leading-tight tracking-tight">${p.title}</h3>
             <span class="text-xs text-clay shrink-0">${label[p.cat]}</span>
           </div>
-          <p class="text-sm text-clay mt-1">${p.client}</p>
+          <p class="text-sm text-clay mt-1">${p.video ? p.client + " · " + p.tag : p.client}</p>
         </article>`).join('');
   }
   render('all');
